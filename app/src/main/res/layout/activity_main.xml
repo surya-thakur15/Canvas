@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="40dp"
+    tools:context = ".MainActivity">
+
+    <TextView
+        android:id="@+id/searchText"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Search"
+        android:textSize="40dp"
+        android:textColor="#000000"
+        android:layout_marginTop="30dp"/>
+
+    <androidx.appcompat.widget.SearchView
+        android:id = "@+id/searchBar"
+        android:layout_below = "@+id/searchText"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:queryHint="Vendors"
+        app:iconifiedByDefault="false">
+    </androidx.appcompat.widget.SearchView>
+
+    <TextView
+        android:id="@+id/allSearch"
+        android:layout_below="@id/searchBar"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="15dp"
+        android:text="@string/results"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/allSearch"
+        tools:listitem="@layout/list_design"
+        android:visibility="visible"/>
+
+
+
+
+</RelativeLayout>
